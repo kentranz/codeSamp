@@ -38,7 +38,7 @@ server <- function(input, output, session){
   
   output$select <- renderUI({
     df <- myData() %>% select(-c(subject_id, hadm_id, icustay_id, age, ethnicity, thirty_day_mort))
-    selectInput("variable", "Choose a variable to explore its association with 30-day ICU mortality:", names(df))
+    selectInput("variable", "Choose a variable to explore its association with 30-day ICU mortality:", sort(names(df)))
     
     
   })
